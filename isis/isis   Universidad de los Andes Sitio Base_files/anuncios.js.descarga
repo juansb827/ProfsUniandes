@@ -1,0 +1,9 @@
+jQuery(document).ready(function() {
+	jQuery('.block-view-announcement .container').slick({
+		infinite: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: true
+	});
+});

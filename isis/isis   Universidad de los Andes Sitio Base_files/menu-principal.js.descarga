@@ -1,0 +1,57 @@
+jQuery(document).ready(function() {
+	jQuery(".wsdownmenu-animated-arrow").click(function() {
+		if (jQuery(this).hasClass("wsdownmenu-lines")) {
+			jQuery("body").css({
+				"position":"fixed",
+				"overflow":"hidden"
+			}); 
+			jQuery("#principal-nav > .container").css({
+				"height":"100%",
+				"padding-bottom":"60px",
+				"overflow":"scroll",
+				"background": "#000"
+			});
+			jQuery("#principal-nav").css({
+				"height":"100%",
+			}); 
+			jQuery("#principal-nav .header").css({
+				"height":"100%",
+				"overflow":"scroll"
+			}); 
+			jQuery("#principal-nav .header").addClass("menu-open")
+		} else {
+			jQuery("body").css({
+				"position":"inherit",
+				"overflow":"inherit"
+			});
+			jQuery("#principal-nav .container").css({
+				"height":"auto",
+				"padding-bottom":"0",
+				"overflow":"inherit"
+			});
+			jQuery("#principal-nav").css({
+				"height":"auto",
+			}); 
+			jQuery("#principal-nav .header").css({
+				"height":"auto",
+				"overflow":"inherit"
+			}); 
+		}
+	});
+
+	/* Responsive - Select idioma */
+	jQuery('.language select').niceSelect();
+	
+	/* Menú mobile */
+
+	jQuery(".wsdownmenu-click").click(function() {
+		if (jQuery('.wsdownmenu-list > li').has('.wsdownmenu-submenu')) {
+			var valtext = jQuery(this).parent().find("> a").text();
+			jQuery(this).parent().find("> ul .link-prev").text(valtext);
+		}
+	});
+
+	jQuery(".link-prev").click(function() {
+		jQuery(this).parent().hide();
+	});
+});

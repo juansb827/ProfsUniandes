@@ -1,0 +1,15 @@
+jQuery(document).ready(function() {
+	jQuery(".box-header-special li#home-special-recent").click(function() {
+		jQuery(".box-header-special li").removeClass("active");
+		jQuery(this).addClass("active");
+		jQuery("section.home-special-related").hide();
+		jQuery("section.home-special-recent").show();
+	});
+
+	jQuery(".box-header-special li#home-special-related").click(function() {
+		jQuery(".box-header-special li").removeClass("active");
+		jQuery(this).addClass("active");
+		jQuery("section.home-special-recent").hide();
+		jQuery("section.home-special-related").show();
+	});
+});

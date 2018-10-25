@@ -1,0 +1,21 @@
+function boxEqualHeight(group) {
+	tallest = 0;
+	group.each(function() {
+		thisHeight = jQuery(this).height();
+		if(thisHeight > tallest) {
+			tallest = thisHeight;
+		}
+	});
+	group.height(tallest);
+}
+
+
+jQuery(window).on('load', function(){
+	if (jQuery(window).width() > 767) {
+		boxEqualHeight(jQuery(".listed-box .box-content-item"));
+		boxcontent =  jQuery(".listed-box .box-content-item").height();
+		boxcontent = boxcontent + 100;
+		jQuery(".listed-box .box-content-item").height(boxcontent +"px");
+	}
+});
+

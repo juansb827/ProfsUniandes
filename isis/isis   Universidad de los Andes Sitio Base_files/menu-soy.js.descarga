@@ -1,0 +1,21 @@
+jQuery(document).ready(function() {
+	jQuery(".styled-select").click(function() {
+		if(jQuery(".select-language").is(":hidden")){
+			jQuery(".select-language").slideDown();
+		} else {
+			jQuery(".select-language").slideUp();
+		}
+	});
+	
+	//desktop
+	jQuery('li.lang-anchor').click(function() {
+		href = jQuery(this).data('href');
+		window.location.href = href;
+	});
+	
+	//mobile
+	jQuery('.nav-item.language .list li').click(function(){
+		href = jQuery(this).data('value');
+		if(href !== '')	window.location.href = href;
+	});
+});

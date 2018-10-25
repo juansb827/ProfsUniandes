@@ -1,0 +1,14 @@
+
+
+
+    jQuery(document).ready(function($) {
+ 
+    $("#user-login").addClass("col-md-6");
+
+   
+
+
+});
+
+
+

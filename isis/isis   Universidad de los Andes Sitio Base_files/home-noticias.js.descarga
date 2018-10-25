@@ -1,0 +1,15 @@
+jQuery(document).ready(function() {
+	jQuery(".box-header-news li#home-list-news-recent").click(function() {
+		jQuery(".box-header-news li").removeClass("active");
+		jQuery(this).addClass("active");
+		jQuery(".box-content-news section.home-list-news-related").hide();
+		jQuery(".box-content-news section.home-list-news-recent").show();
+	});
+
+	jQuery(".box-header-news li#home-list-news-related").click(function() {
+		jQuery(".box-header-news li").removeClass("active");
+		jQuery(this).addClass("active");
+		jQuery(".box-content-news section.home-list-news-recent").hide();
+		jQuery(".box-content-news section.home-list-news-related").show();
+	});
+});

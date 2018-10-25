@@ -1,0 +1,38 @@
+/* global $ */
+/* global document */
+/* global document */
+
+(function() {
+  'use strict';
+  document.addEventListener("touchstart", function() {}, false);
+  jQuery(function() {
+   jQuery('#principal-nav .wrapper').append(jQuery('<a class="wsdownmenu-animated-arrow"><span></span></a>'));
+   jQuery('#principal-nav .wrapper').append(jQuery('<span class="search-loupe"></span>'));
+   jQuery('.wsdownmenu-list > li').has('.wsdownmenu-submenu').prepend('<span class="wsdownmenu-click"><span class="wsdownmenu-arrow fa fa-angle-down"></span></span>');
+   jQuery('.wsdownmenu-submenu > li').has('ul').prepend('<span class="wsdownmenu-click02"><span class="wsdownmenu-arrow fa fa-angle-down"></span></span>');
+   jQuery('.wsdownmenu-submenu-sub > li').has('ul').prepend('<span class="wsdownmenu-click02"><span class="wsdownmenu-arrow fa fa-angle-down"></span></span>');
+   jQuery('.wsdownmenu-submenu-sub > li').has('ul').prepend('<span class="wsdownmenu-click02"><span class="wsdownmenu-arrow fa fa-angle-down"></span></span>');
+   jQuery('.wsdownmenu-submenu-sub-sub > li').has('ul').prepend('<span class="wsdownmenu-click02"><span class="wsdownmenu-arrow fa fa-angle-down"></span></span>');
+   jQuery('.wsdownmenu-list li').has('.megamenu').prepend('<span class="wsdownmenu-click"><span class="wsdownmenu-arrow fa fa-angle-down"></span></span>');
+
+   jQuery('.wsdownmenu-animated-arrow').on('click', function() {
+     jQuery('.wsdownmenu-list').slideToggle('slow');
+     jQuery(this).toggleClass('wsdownmenu-lines');
+     return false;
+   });
+   jQuery('.wsdownmenu-click').on('click', function() {
+     jQuery(this).toggleClass('wsdownmenuarrow-rotate').parent().siblings().children().removeClass('wsdownmenuarrow-rotate');
+     jQuery(".wsdownmenu-submenu, .megamenu").not(jQuery(this).siblings('.wsdownmenu-submenu, .megamenu')).slideUp('slow');
+     jQuery(this).siblings('.wsdownmenu-submenu').slideToggle('slow');
+     jQuery(this).siblings('.megamenu').slideToggle('slow');
+     return false;
+   });
+   jQuery('.wsdownmenu-click02').on('click', function() {
+     jQuery(this).toggleClass('wsdownmenuarrow-rotate').parent().siblings().children().removeClass('wsdownmenuarrow-rotate');
+     jQuery(this).siblings('.wsdownmenu-submenu').slideToggle('slow');
+     jQuery(this).siblings('.wsdownmenu-submenu-sub').slideToggle('slow');
+     jQuery(this).siblings('.wsdownmenu-submenu-sub-sub').slideToggle('slow');
+     return false;
+   });
+ });
+}());

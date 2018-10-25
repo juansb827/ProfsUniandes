@@ -1,0 +1,14 @@
+jQuery(document).ready(function() {
+	var activeBuscador = ".search-loupe";
+	var buscador = "#box-search";
+
+	jQuery(activeBuscador).click(function() { 
+		if(jQuery(buscador).is(":hidden")) {
+			jQuery(buscador).slideDown("slow");
+			jQuery(activeBuscador).addClass("show-box");
+		} else {
+			jQuery(buscador).slideUp();
+			jQuery(activeBuscador).removeClass("show-box");
+		}
+	});	
+});

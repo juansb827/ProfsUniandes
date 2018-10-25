@@ -1,0 +1,4 @@
+jQuery(document).ready(function() {
+	jQuery('#edit-field-categoria-evento-tid-wrapper .form-type-select select').niceSelect();
+});
+

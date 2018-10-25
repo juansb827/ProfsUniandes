@@ -1,0 +1,74 @@
+window.addEventListener("load", function(event){
+	jQuery('body').on('click', '.prof-menu-item a', function(e){
+		e.preventDefault();
+		id = jQuery(this).data('id');
+		li = jQuery(this).parent();
+		ico = jQuery(this).find('i.glyphicon');
+		//resetea
+		jQuery("i.glyphicon").removeClass('glyphicon-menu-hamburger').addClass('glyphicon-ok');
+		jQuery(".prof-menu-item").removeClass('active');
+		jQuery(".prof-menu-item").removeClass('active');
+		jQuery(".tab-container .tab-content").removeClass('active').hide();
+
+		//setea
+		li.addClass('active');
+		ico.removeClass('glyphicon-ok').addClass('glyphicon-menu-hamburger');
+		jQuery(".tab-container .tab-content#" + id).addClass('active').show();
+	});
+}, false);
+
+
+/*
+* Cargue de la página y retorno de información
+*/
+function setResponse(resp){
+	if(typeof(resp) != "undefined" && resp !== null){
+		if(resp.status){
+			jQuery('#prof_ajax_url').parent().append(resp.data);
+		}else{
+			serError(resp.msg);
+		}
+	}else{
+		serError('Error desconocido, por favor intente de nuevo.');
+	}
+}
+
+//en caso de error, ya sea por catch o por lógica
+function serError(e){
+	jQuery('#prof_error span.error').text(e);
+	jQuery('#prof_error').show();
+}
+
+/*Ajax functions*/
+function getInfo(){
+	if(jQuery('#prof_ajax_url').length){
+		ajaxurl = jQuery('#prof_ajax_url').val();
+		console.log('Inicia ajax de consulta de información');
+		try{
+			jQuery.ajax({
+				url: ajaxurl,
+				type: 'get',
+				dataType: "json",
+				beforeSend: function(){
+					jQuery('#prof_wait').show();
+				},
+				success: function(json){
+					setResponse(json);
+				},
+				error: function(e){
+					serError(e);
+				},
+				complete: function(jqXHR){
+					//se ejecuta en todos loa casos, sea error, o success
+					console.log('La consulta finaliza con estado: ' + jqXHR.status + ' (' + jqXHR.statusText + ').' );
+					jQuery('#prof_wait').hide();
+				}
+			});
+		}catch(e){
+			jQuery('#prof_wait').hide();
+			serError(e);
+		}
+	}else{
+		console.log('no fue posible obtener la url de consulta.');
+	}
+}

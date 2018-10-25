@@ -1,0 +1,53 @@
+
+function showContentTab(obj){
+  jQuery(".box-master-five-tabs .nav-tabs li").removeClass("active");
+  jQuery(obj).addClass("active");
+
+  var valink = jQuery(obj).find("> a").attr("href");
+  valink = valink.replace("#", "");
+  jQuery(".box-master-five-tabs .tab-content .tab-pane").removeClass("active");
+  jQuery(".box-master-five-tabs .tab-content .tab-pane[id='"+valink+"']").addClass("active");
+}
+
+
+
+jQuery(document).ready(function() {
+  jQuery('.box-master-five-tabs .nav-tabs').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 8,
+    slidesToScroll: 4,
+    responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      }
+    }
+    ]
+  });
+
+  jQuery(".box-master-five-tabs .nav-tabs li").click(function() {
+    showContentTab(this);
+  });
+
+});
+
+
+

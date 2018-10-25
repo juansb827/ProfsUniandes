@@ -1,0 +1,325 @@
+/*espacio para el css  de las card del home profesores*/
+.small-text{
+    font-size: 10px;
+    color: #343434;
+    text-transform: uppercase;
+}
+
+/*-----Paginator */
+.pagination {
+  width: 100%;
+}
+.pagination li {
+  z-index: 1;
+}
+.pagination li a {
+    height: 100%;
+    
+  }
+  .pagination li a:focus{
+    box-shadow: none;
+  }
+
+  
+  
+  
+.paginator-items .card-wrapper {
+  padding-bottom: 20px;
+}
+
+/*----------2.Headings & Buttons----------*/
+h3 {
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: #555555;
+}
+
+/*----------3.Cards----------*/
+.card {
+  position: relative;
+
+  background-color: #fff;
+  transition: box-shadow 0.25s;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 0;
+
+  flex-direction: inherit !important;
+}
+
+.card .card-image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+.card .card-image img {
+  display: block;
+  border-radius: 2px 2px 0 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  
+  transition: all 0.3s ease-in-out;
+}
+
+.card .card-image:hover img{
+	-moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	-webkit-filter:blur(1px);
+  filter: blur(1px);
+}
+
+.card .card-image:after {
+    content:'\A';
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.3);
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.card .card-image:hover:after {
+   opacity: 1;
+}
+
+.card .card-content {
+  padding: 26px 0 0 0;
+  border-radius: 0 0 2px 2px;
+  margin: -5px 0 0 0;
+}
+
+.card .card-content p {
+  margin: 2;
+  font-size: 14px;
+
+  color: #555555;
+}
+
+.my-card-content > div {
+  position: absolute;
+  padding: 20px 30px 20px 30px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.card .my-card-content {
+  padding-bottom: 54%;
+  position: relative;
+  
+}
+/* Contenido Cards */ 
+
+
+.card .custom-card-title a{
+    
+    text-decoration: none;
+    color: #343434;
+    transition: color 0.1s ease-in ;
+    flex: 0 1 auto;
+}
+.card .custom-card-title a:hover {
+    color: #36aeb5;
+}
+
+.card .custom-card-subtitle {
+    display: block;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    font-size: 14px;
+    flex: 0 1 auto;
+}
+.card .card-description{
+    font-size: 20px;
+    color: #666;
+    flex: 1 1 auto;
+    overflow-y: auto;
+}
+
+.card .emailbox{
+    flex: 0 1 auto;
+    margin-top: .5rem;
+    
+    /*position: absolute;
+    bottom: 30px; */
+
+}
+
+.card .emailbox{
+    font-size: 18px;
+    font-weight: normal ;
+    text-decoration: none;
+}
+
+/*----------3.Cards Desktop ----------*/
+
+@media only screen and (min-width: 768px) {
+    .card .my-card-content {
+      padding-bottom: 32%;
+    }
+  }
+
+@media only screen and (min-width: 992px) {
+  .card .my-card-content {
+    padding-bottom: 100%;
+  }
+}
+
+
+
+
+/*----3.a.Horizontal----*/
+
+.card.horizontal {
+  display: block;
+}
+
+.card.horizontal .card-stacked {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+}
+.card.horizontal .card-stacked .card-content {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+/*menu de tabs */
+#prof-pagination{
+    display: flex;
+    flex-flow: row wrap;
+    min-height: 45px;
+    padding: 0;
+    height: auto;
+    justify-content: center;
+  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+#prof-pagination a{
+    transition: all 0.3s, color 0.5s
+}
+ul.sideNav.nav.navbar {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  width: 300px;
+  margin: 33px 0 32px 31px;
+}
+
+/*titulo de cada cursos  */
+h4.titulo-curso {
+  padding: 14px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/*clase bage*/
+
+span.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+/*hojas TABS  */
+
+.container-cursos {
+  margin-left: -7%;
+}
+
+.contenedor-productos {
+  margin-left: -7%;
+}
+
+.informacion-academica {
+  margin-left: -7%;
+}
+
+button#boton-cursos {
+  border: 1px black solid;
+  width: 100%;
+  height: 58px;
+}
+
+.panel.panel-default.list-curso {
+  width: 100%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+ul {
+  list-style: none;
+}
+
+.informacion-basica {
+  margin: 0 0 0 -7%;
+}
+
+/*flachas cursos  */
+
+span.flecha-arriba {
+  padding: 11px;
+}
+
+span.flecha-abajo {
+  margin: 0 0 0 -25px;
+}
+
+/*fin de flechas cursos  */
+
+/*querys mobile  */
+
+/*labels de los cursos */
+span.label.label-primary.level {
+  padding: 6px;
+  margin: 0 0 0 315px;
+}
+
+@media only screen and (max-width: 600px) {
+  .informacion-basica {
+    margin: 0 0 28px 33px;
+  }
+
+  ul.sideNav.nav.navbar {
+    margin: 33px 0 32px 31px;
+  }
+
+  aside.profile-card {
+    top: 4px;
+  }
+  .card.horizontal {
+    width: 100%;
+  }
+  .card-stacked {
+    margin: -15px 0px 0px -8px;
+  }
+
+  .card {
+    position: relative;
+    /*margin: 2% 5px 2% 5px; */
+    background-color: #fff;
+    transition: box-shadow 0.25s;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+      0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 0;
+  }
+}
